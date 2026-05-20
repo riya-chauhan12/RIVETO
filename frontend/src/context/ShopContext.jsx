@@ -15,7 +15,15 @@ function ShopContext({ children }) {
   const [showSearch, setShowSearch] = useState(false);
   const [cartItem, setCartItem] = useState({});
   const [compareList, setCompareList] = useState([]);
+  const [wishlistItem, setWishlistItem] = useState([]);
   const [comparePanelOpen, setComparePanelOpen] = useState(false);
+  const addToWishlist = (itemId) => {
+   setWishlistItem(prev =>
+     prev.includes(itemId)
+       ? prev.filter(id => id !== itemId)
+       : [...prev, itemId]
+    );
+  };
   const { serverUrl } = useContext(authDataContext);
   const { userData } = useContext(userDataContext); //
 
@@ -200,7 +208,7 @@ function ShopContext({ children }) {
     addtoCart,
     getCartCount,
     setCartItem, UpdateQuantity, getCartAmount,
-    compareList, toggleCompare, removeFromCompare, comparePanelOpen, toggleComparePanel
+    compareList, toggleCompare, removeFromCompare, comparePanelOpen, toggleComparePanel, wishlistItem, addToWishlist
   };
 
   return (

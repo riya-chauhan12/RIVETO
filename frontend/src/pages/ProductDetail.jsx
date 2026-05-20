@@ -8,7 +8,7 @@ import { FaShoppingCart, FaHeart, FaShare, FaStar, FaChevronLeft, FaChevronRight
 
 function ProductDetail() {
   const { productId } = useParams();
-  const { product, pagination, currency, addtoCart, addToWishlist } = useContext(shopDataContext);
+  const { product, pagination, loadingProducts, currency, addtoCart, addToWishlist } = useContext(shopDataContext);
   const [productData, setProductData] = useState(null);
   const [selectedImage, setSelectedImage] = useState('');
   const [size, setSize] = useState('');
@@ -69,23 +69,23 @@ function ProductDetail() {
   };
 
   if (!productData) {
-    const isFullyLoaded = pagination && pagination.page >= pagination.pages;
-    if (isFullyLoaded) {
-      return (
-        <div className="min-h-screen bg-gradient-to-br from-slate-100 to-sky-100 dark:from-[#0f172a] dark:to-[#0c4a6e] flex items-center justify-center">
-          <div className="text-slate-900 dark:text-white text-center">
-            <p className="text-lg">Product not found.</p>
-          </div>
-        </div>
-      );
-    }
-    return (
-      <div className="min-h-screen bg-gradient-to-br from-slate-100 to-sky-100 dark:from-[#0f172a] dark:to-[#0c4a6e] flex items-center justify-center">
-        <div className="text-slate-900 dark:text-white text-center">
-          <div className="w-16 h-16 border-4 border-cyan-500 border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
-          <p className="text-lg">Loading product details...</p>
-        </div>
-      </div>
+   const allPagesLoaded = !loadingProducts && pagination.page >= pagination.pages && product.length > 0;
+   if (allPagesLoaded) {
+     return (
+       <div className="min-h-screen bg-gradient-to-br from-slate-100 to-sky-100 dark:from-[#0f172a] dark:to-[#0c4a6e] flex items-center justify-center">
+         <div className="text-slate-900 dark:text-white text-center">
+           <p className="text-lg">Product not found.</p>
+         </div>
+       </div>
+     );
+   }
+   return (
+     <div className="min-h-screen bg-gradient-to-br from-slate-100 to-sky-100 dark:from-[#0f172a] dark:to-[#0c4a6e] flex items-center justify-center">
+       <div className="text-slate-900 dark:text-white text-center">
+         <div className="w-16 h-16 border-4 border-cyan-500 border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
+         <p className="text-lg">Loading product details...</p>
+       </div>
+     </div>
     );
   }
 
