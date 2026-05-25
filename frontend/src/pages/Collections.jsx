@@ -1,4 +1,4 @@
-import React, {
+import _React, {
   useContext,
   useEffect,
   useState,
@@ -7,18 +7,18 @@ import React, {
 } from 'react';
 import { useFocusTrap, useEscapeKey } from '../hooks/useDialogA11y';
 import {
-  FaChevronRight,
-  FaChevronDown,
-  FaFilter,
-  FaTimes,
-  FaSearch,
-  FaStar,
+  _FaChevronRight,
+  _FaChevronDown,
+  _FaFilter,
+  _FaTimes,
+  _FaSearch,
+  _FaStar,
 } from 'react-icons/fa';
-import { RiPriceTag3Line, RiArrowUpDownLine } from 'react-icons/ri';
-import { toast } from 'react-toastify';
+import { _RiPriceTag3Line, _RiArrowUpDownLine } from 'react-icons/ri';
+import { _toast } from 'react-toastify';
 import { shopDataContext } from '../context/ShopContext';
-import Card from '../components/Card';
-import Footer from '../components/Footer';
+import _Card from '../components/Card';
+import _Footer from '../components/Footer';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -48,7 +48,7 @@ const slideAnimationStyle = `
 `;
 
 // Loader Component
-const Loader = () => {
+const _Loader = () => {
   return (
     <div className="flex flex-col items-center justify-center py-20">
       <div className="relative w-16 h-16 mb-4">
@@ -66,7 +66,7 @@ const Loader = () => {
 };
 
 // Skeleton Loader for Cards
-const CardSkeleton = () => {
+const _CardSkeleton = () => {
   return (
     <div className="bg-gradient-to-br from-slate-100 to-white dark:from-gray-800 dark:to-gray-900 rounded-2xl overflow-hidden shadow-xl border border-slate-200 dark:border-gray-700 animate-pulse">
       <div className="w-full h-64 bg-slate-200 dark:bg-gray-700"></div>
@@ -83,7 +83,7 @@ const CardSkeleton = () => {
 };
 
 // Filter Content Component
-const FilterContent = ({
+const _FilterContent = ({
   activeFilters,
   clearAllFilters,
   priceRange,
@@ -332,7 +332,7 @@ function Collections() {
 
       // Rating filter (simulated)
       if (selectedRatings.length > 0) {
-        productCopy = productCopy.filter((item) => {
+        productCopy = productCopy.filter((_item) => {
           const itemRating = Math.floor(Math.random() * 1.5 + 3.5); // Simulated rating
           return selectedRatings.some((rating) => itemRating >= rating);
         });
@@ -564,7 +564,7 @@ function Collections() {
                   role="list"
                   aria-label="Product results"
                 >
-                  {filterProduct.map((item, index) => (
+                  {filterProduct.map((item, _index) => (
                     <div
                       key={item._id}
                       className="collection-item"

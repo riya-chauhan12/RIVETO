@@ -1,13 +1,13 @@
-import React, { useRef } from 'react';
-import { RiExchangeFundsLine } from 'react-icons/ri';
-import { TbRosetteDiscountCheckFilled } from 'react-icons/tb';
-import { BiSupport } from 'react-icons/bi';
-import { FaShippingFast } from 'react-icons/fa';
+import _React, { useRef } from 'react';
+import { _RiExchangeFundsLine } from 'react-icons/ri';
+import { _TbRosetteDiscountCheckFilled } from 'react-icons/tb';
+import { _BiSupport } from 'react-icons/bi';
+import { _FaShippingFast } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
 
 function OurPolicy() {
   const sectionRef = useRef(null);
-  const navigate = useNavigate();
+  const _navigate = useNavigate();
 
   const policies = [
     {

@@ -1,18 +1,18 @@
-import React, { useRef, useEffect } from 'react';
-import NewsletterBox from '../components/NewLetterBox';
-import Footer from '../components/Footer';
-import Carousel from '../ui/Carousel';
+import _React, { useRef, useEffect } from 'react';
+import _NewsletterBox from '../components/NewLetterBox';
+import _Footer from '../components/Footer';
+import _Carousel from '../ui/Carousel';
 import {
-  FaShieldAlt,
-  FaRocket,
-  FaUsers,
-  FaAward,
-  FaHeart,
-  FaLightbulb,
-  FaCheckCircle,
-  FaLock,
-  FaTruck,
-  FaUserShield,
+  _FaShieldAlt,
+  _FaRocket,
+  _FaUsers,
+  _FaAward,
+  _FaHeart,
+  _FaLightbulb,
+  _FaCheckCircle,
+  _FaLock,
+  _FaTruck,
+  _FaUserShield,
 } from 'react-icons/fa';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';

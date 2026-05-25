@@ -1,7 +1,7 @@
-import React, { useState, useContext, useEffect, useRef } from 'react';
+import _React, { useState, useContext, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { IoEyeOutline, IoEye, IoMail, IoLockClosed } from 'react-icons/io5';
-import { FcGoogle } from 'react-icons/fc';
+import { _IoEyeOutline, _IoEye, _IoMail, _IoLockClosed } from 'react-icons/io5';
+import { _FcGoogle } from 'react-icons/fc';
 import axios from 'axios';
 import { signInWithPopup } from 'firebase/auth';
 import { auth, provider } from '../../utils/Firebase';
@@ -195,7 +195,7 @@ function Login() {
           'Debug: googleLogin request URL =',
           window.__lastGoogleRequest
         );
-      } catch (e) {
+      } catch (_e) {
         /* ignore in non-browser environments */
       }
       await axios.post(

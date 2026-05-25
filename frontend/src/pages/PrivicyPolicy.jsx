@@ -1,19 +1,19 @@
-import React, { useState, useEffect } from 'react';
-import Footer from '../components/Footer';
+import _React, { useState, useEffect } from 'react';
+import _Footer from '../components/Footer';
 import {
-  FaShieldAlt,
-  FaUserShield,
-  FaLock,
-  FaCookie,
-  FaDatabase,
-  FaUserCog,
-  FaGavel,
-  FaEnvelope,
-  FaGithub,
-  FaArrowRight,
-  FaFile,
-  FaCheckCircle,
-  FaExclamationCircle,
+  _FaShieldAlt,
+  _FaUserShield,
+  _FaLock,
+  _FaCookie,
+  _FaDatabase,
+  _FaUserCog,
+  _FaGavel,
+  _FaEnvelope,
+  _FaGithub,
+  _FaArrowRight,
+  _FaFile,
+  _FaCheckCircle,
+  _FaExclamationCircle,
 } from 'react-icons/fa';
 
 const sections = [
@@ -378,7 +378,7 @@ const sections = [
   },
 ];
 
-const TableOfContents = ({ activeSection, onSectionClick }) => (
+const _TableOfContents = ({ activeSection, onSectionClick }) => (
   <div className="lg:sticky lg:top-28 bg-white/85 dark:bg-gray-800/50 backdrop-blur-md rounded-2xl border border-slate-200 dark:border-gray-700 p-6">
     <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-4 flex items-center gap-2">
       <FaFile className="text-cyan-400" />
@@ -410,7 +410,7 @@ const TableOfContents = ({ activeSection, onSectionClick }) => (
   </div>
 );
 
-const Section = ({ section, isActive }) => (
+const _Section = ({ section, isActive }) => (
   <section
     id={section.id}
     className={`scroll-mt-28 transform transition-all duration-500 ${

@@ -1,12 +1,12 @@
-import React, { useContext, useState, useRef, useMemo } from 'react';
+import _React, { useContext, useState, useRef, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { shopDataContext } from '../context/ShopContext';
 import {
-  FaHeart,
-  FaShoppingCart,
-  FaStar,
-  FaCheck,
-  FaExchangeAlt,
+  _FaHeart,
+  _FaShoppingCart,
+  _FaStar,
+  _FaCheck,
+  _FaExchangeAlt,
 } from 'react-icons/fa';
 import { toast } from 'react-toastify';
 import gsap from 'gsap';
@@ -28,11 +28,11 @@ function Card({
   const [isHovered, setIsHovered] = useState(false);
   const [imageLoaded, setImageLoaded] = useState(false);
   const [imageError, setImageError] = useState(false);
-  const [isAddingToCart, setIsAddingToCart] = useState(false);
+  const [isAddingToCart, _setIsAddingToCart] = useState(false);
   const cardRef = useRef(null);
 
   // Removed 3D tilt effect for corporate stability
-  const handleMouseMove = (e) => {
+  const handleMouseMove = (_e) => {
     // No transform changes - stability over motion
   };
 

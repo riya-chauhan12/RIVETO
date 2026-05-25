@@ -1,15 +1,15 @@
-import React, { useContext, useEffect, useState } from 'react';
+import _React, { useContext, useEffect, useState } from 'react';
 import { shopDataContext } from '../context/ShopContext';
-import Card from '../components/Card';
-import Title from '../components/Title';
-import { motion } from 'framer-motion';
+import _Card from '../components/Card';
+import _Title from '../components/Title';
+import { _motion } from 'framer-motion';
 
 const NewArrivals = () => {
   const {
     product,
     compareList,
-    toggleComparePanel,
-    removeFromCompare,
+    _toggleComparePanel,
+    _removeFromCompare,
     toggleCompare,
   } = useContext(shopDataContext);
   const [newArrivals, setNewArrivals] = useState([]);

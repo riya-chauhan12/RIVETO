@@ -1,12 +1,12 @@
 import { useEffect, useState, useRef } from 'react';
-import { motion, useMotionValue, useTransform } from 'motion/react';
+import { _motion, useMotionValue, useTransform } from 'motion/react';
 // replace icons with your own if needed
 import {
-  FiCircle,
-  FiCode,
-  FiFileText,
-  FiLayers,
-  FiLayout,
+  _FiCircle,
+  _FiCode,
+  _FiFileText,
+  _FiLayers,
+  _FiLayout,
 } from 'react-icons/fi';
 
 import '../ui/Carousel.css';

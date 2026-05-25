@@ -1,21 +1,21 @@
-import React, { useContext, useEffect, useState } from 'react';
+import _React, { useContext, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { shopDataContext } from '../context/ShopContext';
 import {
-  RiDeleteBin6Line,
-  RiAddLine,
-  RiSubtractLine,
-  RiShoppingBag3Line,
+  _RiDeleteBin6Line,
+  _RiAddLine,
+  _RiSubtractLine,
+  _RiShoppingBag3Line,
 } from 'react-icons/ri';
 import {
-  FaArrowLeft,
-  FaShoppingBasket,
-  FaLock,
-  FaTruck,
-  FaShieldAlt,
+  _FaArrowLeft,
+  _FaShoppingBasket,
+  _FaLock,
+  _FaTruck,
+  _FaShieldAlt,
 } from 'react-icons/fa';
-import { MdLocalOffer } from 'react-icons/md';
-import CartTotal from '../components/CartTotal';
+import { _MdLocalOffer } from 'react-icons/md';
+import _CartTotal from '../components/CartTotal';
 import { toast } from 'react-toastify';
 
 function Cart() {

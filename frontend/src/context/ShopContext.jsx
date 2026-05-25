@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useEffect, useState } from 'react';
+import _React, { createContext, useContext, useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
 import { authDataContext } from './AuthContext';
 import axios from 'axios';
@@ -144,7 +144,9 @@ function ShopContext({ children }) {
           if (itemInfo && cartItem[items][item] > 0) {
             totalAmount += itemInfo.price * cartItem[items][item];
           }
-        } catch (error) {}
+        } catch (_error) {
+          void _error;
+        }
       }
     }
     return totalAmount;

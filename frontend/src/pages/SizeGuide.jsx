@@ -1,20 +1,20 @@
-import React, { useState } from 'react';
-import Footer from '../components/Footer';
+import _React, { useState } from 'react';
+import _Footer from '../components/Footer';
 import {
-  FaRulerHorizontal,
-  FaRulerVertical,
-  FaTshirt,
-  FaShoePrints,
-  FaMale,
-  FaFemale,
-  FaChild,
-  FaExchangeAlt,
-  FaInfoCircle,
-  FaChevronDown,
-  FaChevronUp,
-  FaHandPointRight,
+  _FaRulerHorizontal,
+  _FaRulerVertical,
+  _FaTshirt,
+  _FaShoePrints,
+  _FaMale,
+  _FaFemale,
+  _FaChild,
+  _FaExchangeAlt,
+  _FaInfoCircle,
+  _FaChevronDown,
+  _FaChevronUp,
+  _FaHandPointRight,
 } from 'react-icons/fa';
-import { GiTrousers, GiNecklaceDisplay } from 'react-icons/gi';
+import { _GiTrousers, _GiNecklaceDisplay } from 'react-icons/gi';
 
 /* ─── Size Data ─── */
 
@@ -246,7 +246,7 @@ const proTips = [
 
 /* ─── Reusable Size Chart Table ─── */
 
-function SizeTable({ chart }) {
+function _SizeTable({ chart }) {
   return (
     <div className="mb-10">
       <h3 className="text-lg md:text-xl font-semibold text-cyan-300 mb-4 flex items-center gap-2">
@@ -330,7 +330,7 @@ function SizeTable({ chart }) {
 
 /* ─── Collapsible Measurement Tip ─── */
 
-function MeasurementTipCard({ tip }) {
+export function MeasurementTipCard({ tip }) {
   const [open, setOpen] = useState(false);
 
   return (

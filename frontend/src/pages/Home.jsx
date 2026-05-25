@@ -1,10 +1,10 @@
-import React, { useEffect, useState, useRef } from 'react';
-import Background from '../components/Background';
-import Hero from '../components/Hero';
-import Product from './Product';
-import OurPolicy from '../components/OurPolicy';
-import NewLetterBox from '../components/NewLetterBox';
-import Footer from '../components/Footer';
+import _React, { useEffect, useState, useRef } from 'react';
+import _Background from '../components/Background';
+import _Hero from '../components/Hero';
+import _Product from './Product';
+import _OurPolicy from '../components/OurPolicy';
+import _NewLetterBox from '../components/NewLetterBox';
+import _Footer from '../components/Footer';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 

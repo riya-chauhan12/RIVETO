@@ -1,18 +1,18 @@
-import React, { useContext, useEffect, useState, useRef } from 'react';
+import _React, { useContext, useEffect, useState, useRef } from 'react';
 import { useParams } from 'react-router-dom';
 import { shopDataContext } from '../context/ShopContext';
-import RelatedProduct from '../components/RelatedProduct';
+import _RelatedProduct from '../components/RelatedProduct';
 import { toast } from 'react-toastify';
 import { authDataContext } from '../context/AuthContext';
 import axios from 'axios';
 import 'react-toastify/dist/ReactToastify.css';
 import {
-  FaShoppingCart,
-  FaHeart,
-  FaShare,
-  FaStar,
-  FaChevronLeft,
-  FaChevronRight,
+  _FaShoppingCart,
+  _FaHeart,
+  _FaShare,
+  _FaStar,
+  _FaChevronLeft,
+  _FaChevronRight,
 } from 'react-icons/fa';
 
 function ProductDetail() {

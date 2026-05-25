@@ -1,5 +1,5 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import _React from 'react';
+import { _motion } from 'framer-motion';
 
 const FeaturedContributor = ({
   contributor,

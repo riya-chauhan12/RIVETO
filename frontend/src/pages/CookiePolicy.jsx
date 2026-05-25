@@ -1,16 +1,16 @@
-import React, { useState, useEffect } from 'react';
-import Footer from '../components/Footer';
+import _React, { useState, useEffect } from 'react';
+import _Footer from '../components/Footer';
 import {
-  FaCookie,
-  FaShieldAlt,
-  FaCog,
-  FaUserCog,
-  FaCheckCircle,
-  FaArrowRight,
-  FaInfoCircle,
-  FaChartLine,
-  FaLock,
-  FaExclamationTriangle,
+  _FaCookie,
+  _FaShieldAlt,
+  _FaCog,
+  _FaUserCog,
+  _FaCheckCircle,
+  _FaArrowRight,
+  _FaInfoCircle,
+  _FaChartLine,
+  _FaLock,
+  _FaExclamationTriangle,
 } from 'react-icons/fa';
 
 const sections = [

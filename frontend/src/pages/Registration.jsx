@@ -1,13 +1,13 @@
-import React, { useState, useContext, useEffect } from 'react';
+import _React, { useState, useContext, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import {
-  IoEyeOutline,
-  IoEye,
-  IoLockClosed,
-  IoMail,
-  IoPerson,
+  _IoEyeOutline,
+  _IoEye,
+  _IoLockClosed,
+  _IoMail,
+  _IoPerson,
 } from 'react-icons/io5';
-import { FcGoogle } from 'react-icons/fc';
+import { _FcGoogle } from 'react-icons/fc';
 import { authDataContext } from '../context/AuthContext';
 import axios from 'axios';
 import { signInWithPopup } from 'firebase/auth';

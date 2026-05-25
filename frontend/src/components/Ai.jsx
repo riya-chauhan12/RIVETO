@@ -1,10 +1,10 @@
-import React, { useContext, useState, useEffect, useRef } from 'react';
+import _React, { useContext, useState, useEffect, useRef } from 'react';
 import robot from '../assets/airobot.gif';
 import { shopDataContext } from '../context/ShopContext';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import sound from '../assets/swift-sound.mp3';
-import { X, Mic, MicOff, MessageCircle } from 'lucide-react';
+import { _X, _Mic, _MicOff, _MessageCircle } from 'lucide-react';
 
   const placeholders =[
     "search",
