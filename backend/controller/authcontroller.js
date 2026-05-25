@@ -55,10 +55,9 @@ export const sendOTP = async (req, res) => {
       success: true,
       message: "OTP sent successfully",
     });
-
-  } catch (error) {
-    console.log("sendOTP error:", error);
-    return res.status(500).json({ message: "Failed to send OTP" });
+  } catch (_error) {
+    console.log("registration error:", _error);
+    return res.status(500).json({ message: `registration error: ${_error}` });
   }
 };
 
@@ -102,8 +101,8 @@ export const verifyOTP = async (req, res) => {
       message: "User verified and created",
       user,
     });
-  } catch (error) {
-    console.log("verifyOTP error:", error);
+  } catch (_error) {
+    console.log("verifyOTP error:", _error);
     return res.status(500).json({ message: "OTP verification failed" });
   }
 };
@@ -127,9 +126,9 @@ export const login = async (req, res) => {
     });
 
     return res.status(200).json(user);
-  } catch (error) {
-    console.log("login error:", error);
-    return res.status(500).json({ message: `login error: ${error}` });
+  } catch (_error) {
+    console.log("login error:", _error);
+    return res.status(500).json({ message: `login error: ${_error}` });
   }
 };
 
@@ -151,9 +150,9 @@ export const googleLogin = async (req, res) => {
     });
 
     return res.status(200).json(user);
-  } catch (error) {
-    console.log("google login error:", error);
-    return res.status(500).json({ message: `google login error: ${error}` });
+  } catch (_error) {
+    console.log("google login error:", _error);
+    return res.status(500).json({ message: `google login error: ${_error}` });
   }
 };
 
@@ -166,9 +165,9 @@ export const logOut = async (req, res) => {
       maxAge: 0,
     });
     return res.status(200).json({ message: "Logged out successfully" });
-  } catch (error) {
-    console.log("logout error:", error);
-    return res.status(500).json({ message: `logout error: ${error}` });
+  } catch (_error) {
+    console.log("logout error:", _error);
+    return res.status(500).json({ message: `logout error: ${_error}` });
   }
 };
 
@@ -189,8 +188,8 @@ export const adminLogin = async (req, res) => {
       return res.status(200).json(token);
     }
     return res.status(400).json({ message: "Invalid admin credentials" });
-  } catch (error) {
-    console.log("admin login error:", error);
-    return res.status(500).json({ message: `admin login error: ${error}` });
+  } catch (_error) {
+    console.log("admin login error:", _error);
+    return res.status(500).json({ message: `admin login error: ${_error}` });
   }
 };
