@@ -25,5 +25,82 @@ export const loginSchema = Joi.object({
     "any.required": "Email is a required field",
   }),
 
-  password: Joi.string().min(8).required(),
+
+  password: Joi.string()
+    .min(8)
+    .required()
 });
+
+export const addToCartSchema = Joi.object({
+  itemId: Joi.string()
+    .required()
+    .messages({
+      'string.empty': 'Item ID cannot be empty',
+      'any.required': 'Item ID is required'
+    }),
+
+  size: Joi.string()
+    .required()
+    .messages({
+      'string.empty': 'Size cannot be empty',
+      'any.required': 'Size is required'
+    })
+});
+
+export const updateCartSchema = Joi.object({
+  itemId: Joi.string()
+    .required()
+    .messages({
+      'string.empty': 'Item ID cannot be empty',
+      'any.required': 'Item ID is required'
+    }),
+
+  size: Joi.string()
+    .required()
+    .messages({
+      'string.empty': 'Size cannot be empty',
+      'any.required': 'Size is required'
+    }),
+
+  quantity: Joi.number()
+    .integer()
+    .min(0)
+    .required()
+    .messages({
+      'number.base': 'Quantity must be a number',
+      'number.min': 'Quantity must be at least 0',
+      'any.required': 'Quantity is required'
+    })
+});
+
+export const addReviewSchema = Joi.object({
+  productId: Joi.string()
+    .required()
+    .messages({
+      'string.empty': 'Product ID cannot be empty',
+      'any.required': 'Product ID is required'
+    }),
+
+  rating: Joi.number()
+    .integer()
+    .min(1)
+    .max(5)
+    .required()
+    .messages({
+      'number.base': 'Rating must be a number',
+      'number.min': 'Rating must be at least 1',
+      'number.max': 'Rating cannot exceed 5',
+      'any.required': 'Rating is required'
+    }),
+
+  comment: Joi.string()
+    .min(3)
+    .max(500)
+    .required()
+    .messages({
+      'string.empty': 'Comment cannot be empty',
+      'string.min': 'Comment must be at least 3 characters',
+      'any.required': 'Comment is required'
+    })
+});
+
