@@ -5,7 +5,12 @@ import { userDataContext } from '../context/UserContext';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import sound from '../assets/swift-sound.mp3';
-import { X, Mic, MicOff, MessageCircle } from 'lucide-react';
+import {
+  X as _X,
+  Mic as _Mic,
+  MicOff as _MicOff,
+  MessageCircle as _MessageCircle,
+} from 'lucide-react';
 
   const placeholders =[
     "search",
@@ -16,10 +21,6 @@ import { X, Mic, MicOff, MessageCircle } from 'lucide-react';
     "contact",
     "order"
   ];
-import { X, Mic, MicOff, MessageCircle, Send } from 'lucide-react';
-
-const placeholders = ["search", "collection", "about", "home", "cart", "contact", "order"];
-
 // ─── FAQ Knowledge Base ───────────────────────────────────────────────────────
 const FAQ = [
   { keywords: ['return', 'refund', 'exchange'], answer: 'We accept returns within 7 days of delivery. Items must be unused and in original packaging. Refunds are processed within 5–7 business days.' },
