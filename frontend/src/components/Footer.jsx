@@ -1,7 +1,20 @@
 import { useEffect, useRef, useState } from 'react';
+import { Link } from 'react-router-dom';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { toast } from 'react-toastify';
+import {
+  FaFacebookF,
+  FaInstagram,
+  FaLinkedinIn,
+  FaPhone,
+  FaEnvelope,
+  FaMapMarkerAlt,
+  FaHeart,
+  FaXTwitter,
+} from 'react-icons/fa';
+import { RiCustomerService2Fill } from 'react-icons/ri';
+import { BiSupport } from 'react-icons/bi';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -92,9 +105,9 @@ function Footer() {
                 name: 'Facebook',
               },
               {
-                icon: <FaTwitter className="w-4 h-4" />,
-                color: 'hover:bg-cyan-500',
-                name: 'Twitter',
+                icon: <FaXTwitter className="w-4 h-4" />,
+                color: 'hover:bg-black dark:hover:bg-white',
+                name: 'X',
               },
               {
                 icon: <FaInstagram className="w-4 h-4" />,
