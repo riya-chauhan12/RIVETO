@@ -75,9 +75,11 @@ export const updateCartSchema = Joi.object({
 
 export const addReviewSchema = Joi.object({
   productId: Joi.string()
+    .pattern(/^[0-9a-fA-F]{24}$/)
     .required()
     .messages({
       'string.empty': 'Product ID cannot be empty',
+      'string.pattern.base': 'Product ID must be a valid MongoDB ObjectId',
       'any.required': 'Product ID is required'
     }),
 
@@ -88,18 +90,21 @@ export const addReviewSchema = Joi.object({
     .required()
     .messages({
       'number.base': 'Rating must be a number',
+      'number.integer': 'Rating must be a whole number',
       'number.min': 'Rating must be at least 1',
       'number.max': 'Rating cannot exceed 5',
       'any.required': 'Rating is required'
     }),
 
   comment: Joi.string()
+    .trim()
     .min(3)
-    .max(500)
+    .max(1000)
     .required()
     .messages({
       'string.empty': 'Comment cannot be empty',
       'string.min': 'Comment must be at least 3 characters',
+      'string.max': 'Comment cannot exceed 1000 characters',
       'any.required': 'Comment is required'
     })
 });

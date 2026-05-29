@@ -12,8 +12,8 @@ const NewArrivals = () => {
   const {
     product,
     compareList,
-    toggleComparePanel,
-    removeFromCompare,
+    _toggleComparePanel,
+    _removeFromCompare,
     toggleCompare,
   } = useContext(shopDataContext);
   const [newArrivals, setNewArrivals] = useState([]);

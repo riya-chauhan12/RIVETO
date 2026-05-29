@@ -1,22 +1,20 @@
-import React, { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { toast } from 'react-toastify';
 import {
   FaFacebookF,
-  FaTwitter,
   FaInstagram,
   FaLinkedinIn,
   FaPhone,
   FaEnvelope,
   FaMapMarkerAlt,
   FaHeart,
-  FaCheckCircle,
-  FaTimes,
+  FaXTwitter,
 } from 'react-icons/fa';
 import { RiCustomerService2Fill } from 'react-icons/ri';
 import { BiSupport } from 'react-icons/bi';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { toast } from 'react-toastify';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -24,7 +22,7 @@ function Footer() {
   const footerRef = useRef(null);
   const currentYear = new Date().getFullYear();
   const [email, setEmail] = useState('');
-  const [isSubscribed, setIsSubscribed] = useState(false);
+  const [_isSubscribed, setIsSubscribed] = useState(false);
 
   useEffect(() => {
     // Animate footer elements on scroll
@@ -107,9 +105,9 @@ function Footer() {
                 name: 'Facebook',
               },
               {
-                icon: <FaTwitter className="w-4 h-4" />,
-                color: 'hover:bg-cyan-500',
-                name: 'Twitter',
+                icon: <FaXTwitter className="w-4 h-4" />,
+                color: 'hover:bg-black dark:hover:bg-white',
+                name: 'X',
               },
               {
                 icon: <FaInstagram className="w-4 h-4" />,
