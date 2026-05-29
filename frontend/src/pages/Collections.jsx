@@ -133,15 +133,15 @@ const FilterContent = ({
             aria-valuemin={0}
             aria-valuemax={2000}
             aria-valuenow={priceRange[1]}
-            aria-label={`Maximum price ${priceRange[1]} dollars`}
+            aria-label={`Maximum price ₹${priceRange[1]}`}
           />
           <div className="flex justify-between mt-3">
             <span className="text-slate-700 dark:text-gray-400 text-sm font-medium">
-              ${priceRange[0]}
+              ₹{priceRange[0]}
             </span>
 
             <span className="text-slate-900 dark:text-white text-sm font-semibold">
-              ${priceRange[1]}
+              ₹{priceRange[1]}
             </span>
           </div>
         </div>
