@@ -21,7 +21,6 @@ function BestSeller() {
   const autoScrollRef = useRef(null);
 
   const statsRef = useRef(null);
-  const [statsAnimated, setStatsAnimated] = useState(false);
 
   const [unitsSold, setUnitsSold] = useState(0);
   const [rating, setRating] = useState(0);
