@@ -33,6 +33,7 @@ import SizeGuide from './pages/SizeGuide';
 import CookiePolicy from './pages/CookiePolicy';
 import Contributors from './pages/Contributors';
 import NotFound from './pages/NotFound';
+import LandingPage from './pages/LandingPage';
 import Ai from './components/Ai';
 import ComparisonPanel from './components/ComparisonPanel';
 
@@ -45,7 +46,7 @@ function App() {
     removeFromCompare,
   } = useContext(shopDataContext);
   const location = useLocation();
-  const hideNavRoutes = ['/login', '/signup'];
+  const hideNavRoutes = ['/login', '/signup', '/'];
   const shouldShowNav = !hideNavRoutes.includes(location.pathname);
 
   return (
@@ -58,28 +59,38 @@ function App() {
         <Route
           path="/login"
           element={
-            userData ? <Navigate to={location.state?.from || '/'} /> : <Login />
+            userData ? (
+              <Navigate to={location.state?.from || '/home'} />
+            ) : (
+              <Login />
+            )
           }
         />
         <Route
           path="/signup"
           element={
             userData ? (
-              <Navigate to={location.state?.from || '/'} />
+              <Navigate to={location.state?.from || '/home'} />
             ) : (
               <Registration />
             )
           }
         />
 
-        {/* Protected Routes */}
+        {/* Public landing page — no auth required */}
         <Route
           path="/"
+          element={userData ? <Navigate to="/home" replace /> : <LandingPage />}
+        />
+
+        {/* Protected Routes */}
+        <Route
+          path="/home"
           element={
             userData ? (
               <Home />
             ) : (
-              <Navigate to="/login" state={{ from: location.pathname }} />
+              <Navigate to="/login" state={{ from: '/home' }} />
             )
           }
         />

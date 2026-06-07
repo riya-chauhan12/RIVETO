@@ -26,10 +26,7 @@ function ShopContext({ children }) {
   const currency = '₹';
   const delivery_fee = 40;
   //wishlist functions
-  const fetchWishlist = async () => {
-    try {
-      const response = await apiConfig.get('/wishlist');
- //wishlist functions
+
   const fetchWishlist = async () => {
     setLoadingWishlist(true);
     setWishlistError(null);
@@ -41,24 +38,18 @@ function ShopContext({ children }) {
         setWishlistError(response.data.message || 'Failed to fetch wishlist');
       }
     } catch (error) {
-      console.log(error);
-      setWishlistError(error.response?.data?.message || error.message || 'Failed to fetch wishlist');
+      // eslint-disable-next-line no-console
+      console.error(error);
+      setWishlistError(
+        error.response?.data?.message ||
+          error.message ||
+          'Failed to fetch wishlist'
+      );
     } finally {
       setLoadingWishlist(false);
     }
   };
-const addToWishlist = async (productId) => {
-  try {
-    const response = await apiConfig.post('/wishlist/add', { productId });
 
-      if (response.data.success) {
-        setWishlist(response.data.wishlist);
-      }
-    } catch (error) {
-      // eslint-disable-next-line no-console
-      console.error(error);
-    }
-  };
   const addToWishlist = async (productId) => {
     try {
       const response = await apiConfig.post('/wishlist/add', { productId });
@@ -108,8 +99,11 @@ const addToWishlist = async (productId) => {
     } catch (error) {
       // eslint-disable-next-line no-console
       console.error('Error fetching products:', error);
-      console.log('Error fetching products:', error);
-      setProductsError(error.response?.data?.message || error.message || 'Failed to load products.');
+      setProductsError(
+        error.response?.data?.message ||
+          error.message ||
+          'Failed to load products.'
+      );
     } finally {
       setLoadingProducts(false);
     }
@@ -156,8 +150,9 @@ const addToWishlist = async (productId) => {
     } catch (error) {
       // eslint-disable-next-line no-console
       console.error('Error fetching cart:', error);
-      console.log('❌ Error fetching cart:', error);
-      setCartError(error.response?.data?.message || error.message || 'Failed to load cart.');
+      setCartError(
+        error.response?.data?.message || error.message || 'Failed to load cart.'
+      );
     } finally {
       setLoadingCart(false);
     }
@@ -249,9 +244,9 @@ const addToWishlist = async (productId) => {
     setComparePanelOpen(state !== undefined ? state : !comparePanelOpen);
   };
 
-   
   useEffect(() => {
     getProducts();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   useEffect(() => {
     if (userData) {
@@ -290,12 +285,11 @@ const addToWishlist = async (productId) => {
     comparePanelOpen,
     toggleComparePanel,
     wishlist,
+    loadingWishlist,
+    wishlistError,
     addToWishlist,
     fetchWishlist,
     removeFromWishlist,
-    setCartItem, UpdateQuantity, getCartAmount,
-    compareList, toggleCompare, removeFromCompare, comparePanelOpen, toggleComparePanel,
-    wishlist, loadingWishlist, wishlistError, addToWishlist, fetchWishlist, removeFromWishlist
   };
 
   return (
