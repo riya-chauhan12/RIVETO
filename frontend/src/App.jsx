@@ -27,7 +27,7 @@ import Cart from './pages/Cart';
 import PlaceOrder from './pages/PlaceOrder';
 import FaqPage from './pages/FaqPage';
 import Order from './pages/Order';
-import PrivicyPolicy from './pages/PrivicyPolicy';
+import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsAndServices from './pages/TermsAndServices';
 import SizeGuide from './pages/SizeGuide';
 import CookiePolicy from './pages/CookiePolicy';
@@ -219,8 +219,8 @@ function App() {
         />
 
         {/* Public routes - Legal pages should be accessible without login */}
-        <Route path="/privacy" element={<PrivicyPolicy />} />
-        <Route path="/privicypolicy" element={<PrivicyPolicy />} />
+        <Route path="/privacypolicy" element={<PrivacyPolicy />} />
+        <Route path="/privicypolicy" element={<Navigate to="/privacypolicy" replace />} />
         <Route path="/terms" element={<TermsAndServices />} />
         <Route path="/termsandservices" element={<TermsAndServices />} />
         <Route path="/size-guide" element={<SizeGuide />} />

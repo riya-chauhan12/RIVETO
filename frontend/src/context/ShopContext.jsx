@@ -20,12 +20,11 @@ function ShopContext({ children }) {
 
   const { userData } = useContext(userDataContext); //
   const [wishlist, setWishlist] = useState([]);
-  const [loadingWishlist, setLoadingWishlist] = useState(false);
-  const [wishlistError, setWishlistError] = useState(null);
 
   const currency = '₹';
   const delivery_fee = 40;
   //wishlist functions
+  const fetchWishlist = async () => {
 
   const fetchWishlist = async () => {
     setLoadingWishlist(true);
@@ -34,10 +33,9 @@ function ShopContext({ children }) {
       const response = await apiConfig.get('/wishlist');
       if (response.data.success) {
         setWishlist(response.data.wishlist);
-      } else {
-        setWishlistError(response.data.message || 'Failed to fetch wishlist');
       }
     } catch (error) {
+      console.log(error);
       // eslint-disable-next-line no-console
       console.error(error);
       setWishlistError(
