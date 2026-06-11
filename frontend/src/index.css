@@ -123,3 +123,131 @@ body {
 }
 
 /* In your index.css or Tailwind config */
+
+/* ==========================================
+   Responsive Design (index.css)
+   Mobile : 320px – 480px
+   Tablet : 481px – 767px
+   Small Laptop: 768px – 992px
+========================================== */
+
+/* Base responsive safety */
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* ================= MOBILE ================= */
+@media screen and (max-width: 480px) {
+
+  body {
+    font-size: 14px;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+    line-height: 1.2;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    line-height: 1.25;
+  }
+
+  h3 {
+    font-size: 1.25rem;
+  }
+
+  p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  button {
+    min-height: 44px;
+    font-size: 0.95rem;
+  }
+
+  /* Reduce heavy animations on mobile */
+  .animate-float {
+    animation-duration: 3s;
+  }
+}
+
+/* ================= TABLET ================= */
+@media screen and (min-width: 481px) and (max-width: 767px) {
+
+  body {
+    font-size: 15px;
+  }
+
+  h1 {
+    font-size: 2.2rem;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+  }
+
+  h3 {
+    font-size: 1.4rem;
+  }
+
+  .container {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  button {
+    min-height: 46px;
+  }
+}
+
+/* ================= SMALL LAPTOP ================= */
+@media screen and (min-width: 768px) and (max-width: 992px) {
+
+  body {
+    font-size: 16px;
+  }
+
+  h1 {
+    font-size: 2.6rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  h3 {
+    font-size: 1.6rem;
+  }
+
+  .container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+/* ================= RESPONSIVE IMAGES ================= */
+img,
+video,
+svg {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ================= TOUCH FRIENDLY UI ================= */
+@media (max-width: 767px) {
+
+  a, button {
+    min-height: 44px;
+    touch-action: manipulation;
+  }
+}
+
