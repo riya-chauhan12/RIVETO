@@ -334,9 +334,18 @@ function LandingPage() {
                 key={id}
                 type="button"
                 onClick={() => scrollTo(id)}
-                className="text-gray-600 dark:text-gray-300 hover:text-[#2563EB] dark:hover:text-blue-400 transition-colors"
+                className=" group relative  px-3 py-2 overflow-visible transition-all  duration-30  "
               >
-                {label}
+                {/* Soft Aura */}
+                <span className="  absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-0 h-0 opacity-0 blur-lg rounded-full bg-gradient-to-r from-[#3B82F6]/15  via-[#6366F1]/20  to-[#8B5CF6]/15 transition-all  duration-500  group-hover:w-20  group-hover:h-7 group-hover:opacity-100" />
+
+                {/* Text */}
+                <span className=" relative z-10 text-gray-300 transition-all  duration-300 group-hover:text-[#b9b4cc]">
+                  {label}
+                </span>
+
+                {/* Underline */}
+                <span className=" absolute left-0  -bottom-1 h-[1.5px] w-0 rounded-full bg-gradient-to-r from-[#60A5FA] via-[#818CF8] to-[#A78BFA] transition-all duration-500 group-hover:w-[85%] " />
               </button>
             ))}
           </nav>
