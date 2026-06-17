@@ -100,14 +100,12 @@ npm install
 
 ### 4. Start development servers
 
+Open two separate terminal windows to run the servers simultaneously:
+
+**Terminal 1 (Backend):**
 ```bash
-# Backend (Node.js/Express)
 cd backend
 npm run dev
-
-# Frontend (React)
-cd ../frontend
-npm start
 ```
 
 - Backend: [http://localhost:5000](http://localhost:5000)
