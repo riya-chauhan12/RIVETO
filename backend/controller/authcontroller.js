@@ -243,7 +243,7 @@ export const forgotPassword = async (req, res) => {
     try {
       await sendMail(user.email, message);
       res.status(200).json({ success: true, message: "Email sent" });
-    } catch (error) {
+    } catch (_error) {
       if (process.env.NODE_ENV !== "production") {
         console.log("[DEV MODE] Email failed, but token saved for local testing.");
         return res.status(200).json({ success: true, message: "Reset link generated (check console)" });
@@ -254,8 +254,8 @@ export const forgotPassword = async (req, res) => {
       await user.save();
       return res.status(500).json({ message: "Email could not be sent" });
     }
-  } catch (error) {
-    res.status(500).json({ message: error.message });
+  } catch (_error) {
+    res.status(500).json({ message: _error.message });
   }
 };
 
@@ -291,7 +291,7 @@ export const resetPassword = async (req, res) => {
       success: true,
       message: "Password reset successful",
     });
-  } catch (error) {
-    res.status(500).json({ message: error.message });
+  } catch (_error) {
+    res.status(500).json({ message: _error.message });
   }
 };

@@ -41,7 +41,7 @@ import Ai from './components/Ai';
 import ComparisonPanel from './components/ComparisonPanel';
 
 function App() {
-  const { userData, getCurrentUser } = useContext(userDataContext);
+  const { userData } = useContext(userDataContext);
   const {
     compareList,
     comparePanelOpen,
