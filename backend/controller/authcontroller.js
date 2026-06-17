@@ -30,18 +30,22 @@ export const sendOTP = async (req, res) => {
 
     await TempUser.findOneAndDelete({ email });
 
-    const otp = generateOTP();
-    console.log("------------------------------------------");
-    console.log(`SIGNUP OTP for ${email}: ${otp}`);
-    console.log("------------------------------------------");
+    const otp = generateOTP().toString();
+    if (process.env.NODE_ENV !== "production") {
+      console.log("------------------------------------------");
+      console.log(`SIGNUP OTP for ${email}: ${otp}`);
+      console.log("------------------------------------------");
+    }
+
     const hashedPassword = await bcrypt.hash(password, 10);
+    const hashedOTP = await bcrypt.hash(otp, 10);
 
     // save temp user
     await TempUser.create({
       name,
       email,
       password: hashedPassword,
-      otp,
+      otp: hashedOTP,
       otpExpire: new Date(Date.now() + 5 * 60 * 1000),
     });
     try {
