@@ -49,10 +49,12 @@ function App() {
     removeFromCompare,
   } = useContext(shopDataContext);
   const location = useLocation();
-  const hideNavRoutes = ['/login', '/signup', '/', '/forgot-password', '/reset-password'];
-  const shouldShowNav = !hideNavRoutes.some((route) =>
+  const hideNavRoutes = ['/login', '/signup', '/forgot-password', '/reset-password'];
+  const isRoot = location.pathname === '/';
+  const shouldHideNav = isRoot || hideNavRoutes.some((route) =>
     location.pathname.startsWith(route)
   );
+  const shouldShowNav = !shouldHideNav;
 
   return (
     <>
